@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { NavLink } from 'react-router-dom';
 
 import Logo from '../../assets/images/react.svg';
 
@@ -20,19 +21,19 @@ class Header extends Component{
                 <nav id="menu">
                     <ul>
                         <li>
-                            <a href="index.html">Inicio</a>
+                            <NavLink to="/" activeClassName="menuActive">Inicio</NavLink>
                         </li>
                         <li>
-                            <a href="blog.html">Blog</a>
+                            <NavLink to="/Blog" activeClassName="menuActive">Blog</NavLink>
                         </li>
                         <li>
-                            <a href="formulario.html">Formulario</a>
+                            <NavLink to="/formulario" activeClassName="menuActive">Formulario</NavLink>
                         </li>
                         <li>
-                            <a href="#">Pagina 1</a>
+                            <NavLink to="/pagina" activeClassName="menuActive">Pagina 1</NavLink>
                         </li>
                         <li>
-                            <a href="#">Pagina 2</a>
+                            <NavLink to="/pagina" activeClassName="menuActive">Pagina 2</NavLink>
                         </li>                            
                     </ul>
                 </nav>

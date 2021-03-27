@@ -90,6 +90,10 @@ body {
   color: #3cb2d3;
 }
 
+.menuActive{
+  color: #3cb2d3 !important;
+}
+
 #slider{
   width: 100%;
   height: 350px;
