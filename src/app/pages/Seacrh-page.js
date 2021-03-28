@@ -3,20 +3,21 @@ import Sidebar from '../sections/Sidebar';
 import Slider from '../sections/Slider';
 import Articles from '../sections/Articles';
 
-class Blog extends Component{
+class Search extends Component{
 
     render(){
-        
+        var busqueda = this.props.match.params.id;
+
         return(
             <React.Fragment>
-            <Slider title="Blog" size="slider-small"></Slider>
+            <Slider title={"Busqueda: "+ busqueda} size="slider-small"></Slider>
 
             <div className="center">
                 <section id="content">
                     
-                    <h1 className="subheader">Blog</h1>
+                    <h1 className="subheader">Articulos encontrados</h1>
 
-                    <Articles></Articles>
+                    <Articles accion='search' search={busqueda}></Articles>
 
                 </section>
 
@@ -27,4 +28,4 @@ class Blog extends Component{
     }
 }
 
-export default Blog;
+export default Search;

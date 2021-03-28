@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Sidebar from '../sections/Sidebar';
 import Slider from '../sections/Slider';
+import Articles from '../sections/Articles';
 
 class Home extends Component{
     render(){
@@ -14,7 +15,7 @@ class Home extends Component{
                     
                     <h2 className="subheader">Últimos artículos</h2>
 
-                    
+                    <Articles accion='limit'></Articles>
 
                 </section>
 

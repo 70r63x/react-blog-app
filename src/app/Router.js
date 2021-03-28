@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
 
 import Header from "./shared/Header";
 import Footer from "./shared/Footer";
@@ -8,6 +8,8 @@ import Home from '../app/pages/Home';
 import Pagina from '../app/pages/Pagina';
 import Blog from '../app/pages/Blog';
 import Formulario from '../app/pages/Formulario';
+import Search from "../app/pages/Seacrh-page";
+import ArticleDetail from "../app/pages/Article-detail";
 import Error404 from '../app/pages/Error404';
 
 class Router extends Component{
@@ -19,6 +21,15 @@ class Router extends Component{
                 <Route exact path="/" component={Home} />
                 <Route exact path="/pagina" component={Pagina} />
                 <Route exact path="/blog" component={Blog} />
+                <Route exact path="/blog/:id" component={ArticleDetail} />
+                <Route exact path="/search/:id" component={Search} />
+                <Route exact path="/search-redirect/:id" render={
+                    (props) =>{
+                        return(
+                        <Redirect to={'/search/'+ props.match.params.id}></Redirect>
+                        )
+                    }
+                }/>
                 <Route exact path="/formulario" component={Formulario} />
 
                 <Route component={Error404} />
