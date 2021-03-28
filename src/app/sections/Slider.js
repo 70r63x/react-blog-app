@@ -8,7 +8,7 @@ class Slider extends Component{
             <div id="slider" className={this.props.size}>
                 <h1>{this.props.title}</h1>
                 {this.props.size === 'slider-big' &&
-                    <NavLink to="/Blog" className="btn-white">Ir al blog</NavLink>
+                    <NavLink to="/blog" className="btn-white">Ir al blog</NavLink>
                 }
             </div>
         )

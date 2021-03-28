@@ -3,8 +3,9 @@ import axios from "axios";
 import environment from "../../environments/environments";
 import Moment from "react-moment";
 import "moment/locale/es";
-import {Link} from "react-router-dom";
 import Sidebar from '../sections/Sidebar';
+import { Redirect } from 'react-router';
+import { Link } from 'react-router-dom';
 
 class ArticleDetail extends Component{
 
@@ -30,7 +31,20 @@ class ArticleDetail extends Component{
         });
     }
 
+    deletArticle = (idArticle) =>{
+        axios.delete(this.servidor+"/article/"+idArticle)
+        .then(resp =>{
+            this.setState({
+                dataArticle: resp.data.article,
+                status: 'deleted'
+            })
+        })
+    }
+
     render(){
+        if(this.state.status === 'deleted'){
+            return <Redirect to="/blog"></Redirect>
+        }
         return(
             <React.Fragment>
             <div className="center">
@@ -53,8 +67,12 @@ class ArticleDetail extends Component{
                         {this.state.dataArticle.content}
                         </p>
 
-                        <a href="#" className="btn btn-success">Editar</a>
-                        <a href="#" className="btn btn-success">Borrar</a>
+                        <Link to={'/editar-articulo/'+this.state.dataArticle._id} className="btn btn-success">Editar</Link>
+                        <a onClick={
+                            () =>{
+                                this.deletArticle(this.state.dataArticle._id)
+                            }
+                            } className="btn btn-success">Borrar</a>
 
                         <div className="clearfix"></div>
                     </article>

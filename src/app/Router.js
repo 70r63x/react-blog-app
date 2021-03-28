@@ -10,6 +10,8 @@ import Blog from '../app/pages/Blog';
 import Formulario from '../app/pages/Formulario';
 import Search from "../app/pages/Seacrh-page";
 import ArticleDetail from "../app/pages/Article-detail";
+import NewArticle from "../app/pages/New-article";
+import EditArticle from "../app/pages/Edit-article";
 import Error404 from '../app/pages/Error404';
 
 class Router extends Component{
@@ -31,6 +33,8 @@ class Router extends Component{
                     }
                 }/>
                 <Route exact path="/formulario" component={Formulario} />
+                <Route exact path="/crear-articulo" component={NewArticle} />
+                <Route exact path="/editar-articulo/:id" component={EditArticle} />
 
                 <Route component={Error404} />
             </Switch>
