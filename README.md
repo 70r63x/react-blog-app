@@ -1,3 +1,9 @@
+# ReactBlog
+
+Frontend para Blog con React
+
+Backend asociado para el proyecto ---> [BackEnd Blog](https://github.com/70r63x/backend-blog-app)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
